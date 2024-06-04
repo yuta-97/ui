@@ -4,3 +4,4 @@ public/
 tsconfig.json
 build
 .prettierrc.json
+.storybook/

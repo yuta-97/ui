@@ -4,6 +4,16 @@
   "private": false,
   "main": "dist/index.js",
   "description": "Personl design system",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepare": "rm -rf dist && mkdir dist && tsc",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_dc2f4a2b681f3e0"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -20,12 +30,22 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "rm -rf dist && mkdir dist && tsc"
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.5.0",
+    "@storybook/addon-essentials": "^8.1.5",
+    "@storybook/addon-interactions": "^8.1.5",
+    "@storybook/addon-links": "^8.1.5",
+    "@storybook/addon-onboarding": "^8.1.5",
+    "@storybook/blocks": "^8.1.5",
+    "@storybook/preset-create-react-app": "^8.1.5",
+    "@storybook/react": "^8.1.5",
+    "@storybook/react-webpack5": "^8.1.5",
+    "@storybook/test": "^8.1.5",
+    "chromatic": "^11.5.1",
+    "eslint-plugin-storybook": "^0.8.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.1.5",
+    "webpack": "^5.91.0"
   },
   "exports": {
     ".": {
@@ -40,7 +60,9 @@
     "design-system",
     "ui"
   ],
-  "author": "yuta.heo",
+  "author": {
+    "name": "yuta.heo"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cozy-ho/ui/issues"
@@ -48,7 +70,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -62,5 +85,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://github.com/cozy-ho/ui#readme"
 }
