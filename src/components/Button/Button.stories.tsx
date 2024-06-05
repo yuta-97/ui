@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Button } from "./Button";
+import Button from "./Button";
+import { VARIANT_LIST } from "../../theme/utils";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta = {
@@ -14,7 +15,19 @@ const meta: Meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    variant: {
+      control: {
+        accept: VARIANT_LIST,
+      },
+      description: "버튼 스타일을 설정합니다",
+      name: "variant",
+    },
+    disabled: {
+      description: "버튼을 비활성화 여부를 결정합니다",
+      name: "disabled",
+      type: "boolean",
+      control: "boolean",
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -26,27 +39,28 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: "Button",
+    children: "Button",
+    variant: "primary",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Button",
+    children: "Button",
+    variant: "secondary",
   },
 };
 
-export const Large: Story = {
+export const Default: Story = {
   args: {
-    size: "large",
-    label: "Button",
+    children: "Button",
+    variant: "default",
   },
 };
 
-export const Small: Story = {
+export const Error: Story = {
   args: {
-    size: "small",
-    label: "Button",
+    children: "Button",
+    variant: "error",
   },
 };
