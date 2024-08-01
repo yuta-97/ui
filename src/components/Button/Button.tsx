@@ -6,7 +6,6 @@ import { shouldForwardProp } from "../../theme/utils";
 const ButtonRoot = styled("button", {
   shouldForwardProp: shouldForwardProp(["variant"]),
 })<{ variant: Variant }>(({ theme, variant }) => {
-  console.log("/..?", theme);
   return {
     padding: `10px 12px`,
     fontSize: 14,

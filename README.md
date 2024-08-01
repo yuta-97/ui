@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Intro
+개인적으로 이것저것 만들어볼 때 사용 할 디자인 시스템.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MUI의 동작 방식에 대한 이해도 할 겸, 직접 구현 해 본다.
 
-## Available Scripts
+# 목표
+오픈소스나 상용 서비스가 아닌 개인 사용이 목적이기 때문에 철저히 주관적인 견해와 취향이 들어간다.
 
-In the project directory, you can run:
+욕심으로는 그럴듯하게 제작하고 범용성 있게 만들고 싶지만 한정적인 리소스로는 한계가 분명하고 만족할만한 퀄리티를 뽑아 낼 자신이 없다.
 
-### `npm start`
+## 컴포넌트 리스트
+- [ ] Button
+- [ ] ButtonGroup
+- [ ] Select
+- [ ] Switch
+- [ ] Checkbox
+- [ ] Radio Group
+- [ ] TextField
+- [ ] Icon
+- [ ] Tooltip
+- [ ] Chip
+- [ ] Table
+- [ ] Typography
+- [ ] Dialog
+- [ ] Progress
+- [ ] Skeleton
+- [ ] Pagination
+- [ ] Container
+- [ ] Grid
+- [ ] Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 고민들
+## 240724
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+MUI 방식 처럼 만들고 싶다..
 
-### `npm test`
+기본적으로 `StyledComponent`를 사용하고, 해당 라이브러리를 사용하는 곳에서 입맞에 맞게 커스텀이 가능 하도록. 그러려면 styled 함수를 Custom 해서 사용해야한다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+StyledCompenent 방식은 ThemeProvider 아래에서 동작하기 떄문에, 특별히 처리해야 하는 부분들이 있다. 예를들면 사용자가 해당 라이브러리의 설정 그대로 사용하는 경우에는 기본 Theme 을 적용 시켜야 하고, 커스텀을 위해 별도의 ThemeProvider 를 사용
+해당 부분은 MUI 의 동작 방식을 뜯어보면서 구현 해 나가야 할 듯 하다.
